@@ -1,8 +1,8 @@
-** Project Overview
+## Project Overview
 
 This project is a data warehousing solution that extracts, transforms, and loads data from various sources into a centralized database. The project consists of multiple layers, including bronze, silver, and gold, each serving a specific purpose in the data processing pipeline.
 
-** Project Structure
+## Project Structure
 
 The project is organized into the following directories:
 
