@@ -24,7 +24,7 @@ Referential integrity between fact and dimension tables
 Validation of relationships in the data model from analytical purpose
 Usage
 
-To use this project, follow these steps:
+## To use this project, follow these steps:
 
 Create a new database named DataWarehouse.
 Run the scripts in the scripts directory to create the database objects and load the data.
