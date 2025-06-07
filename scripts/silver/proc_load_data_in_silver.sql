@@ -8,6 +8,9 @@ Actions performed :-
 ------------------------------------
 */
 
+USE DataWarehouse;
+GO
+
 CREATE OR ALTER PROCEDURE silver.load_silver
 AS
 BEGIN
@@ -226,3 +229,5 @@ BEGIN
 		PRINT '-------------------------------------------------------------------------';
 	END CATCH
 END;
+
+EXEC silver.load_silver;

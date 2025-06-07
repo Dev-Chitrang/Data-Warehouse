@@ -4,7 +4,8 @@ Create Gold Views
 This script creates views in the 'views' schema, dropping existing views if already exists.
 ---------------------------------------------------------------
 */
-
+USE DataWarehouse;
+GO
 
 IF OBJECT_ID('gold.dim_customers', 'V') IS NOT NULL
     DROP VIEW gold.dim_customers;
@@ -32,6 +33,10 @@ AS
         LEFT JOIN silver.erp_loc_a101 la ON ci.cst_key = la.cid
 GO
 
+SELECT *
+FROM gold.dim_customers;
+GO
+
 
 IF OBJECT_ID('gold.dim_products', 'V') IS NOT NULL
     DROP VIEW gold.dim_products;
@@ -57,6 +62,10 @@ AS
     WHERE pn.prd_end_dt IS NULL
 GO
 
+SELECT *
+FROM gold.dim_products;
+GO
+
 IF OBJECT_ID('gold.fact_sales', 'V') IS NOT NULL
     DROP VIEW gold.fact_sales;
 PRINT 'View gold.fact_sales dropped'
@@ -77,3 +86,8 @@ AS
     FROM silver.crm_sales_details sd
         LEFT JOIN gold.dim_products pr ON sd.sls_prd_key = pr.product_number
         LEFT JOIN gold.dim_customers cu ON sd.sls_cust_id = cu.customer_id;
+GO
+
+SELECT *
+FROM gold.fact_sales;
+GO

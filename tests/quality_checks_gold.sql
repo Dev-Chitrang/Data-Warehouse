@@ -7,7 +7,8 @@ This script performs quality checks on the 'gold' schema to ensure data integrit
 3. Validation of relationships in the data model from analytical purpose
 ---------------------------------------------------------------
 */
-
+USE DataWarehouse;
+GO
 
 SELECT customer_key, COUNT(*) AS duplicate_count
 FROM gold.dim_customers

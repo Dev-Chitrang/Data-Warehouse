@@ -10,6 +10,9 @@ This script performs quality checks for data consistency, accuracy and standardi
 ---------------------------------------------------------------
 */
 
+USE DataWarehouse;
+GO
+
 
 SELECT cst_id, COUNT(*)
 FROM silver.crm_cust_info
